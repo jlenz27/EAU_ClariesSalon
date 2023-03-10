@@ -11,50 +11,50 @@ namespace HairSalons.Controllers
   {
     private readonly HairSalonsContext _db;
 
-    public Stylists Controller(BestRestaurantsContext db)
+    public StylistsController(HairSalonsContext db)
     {
       _db = db;
     }
 
     public ActionResult Index()
     {
-      List<Cuisine> model = _db.Cuisines
-                            .Include(cuisine => cuisine.Restaurant)
+      List<Stylist> model = _db.Stylists
+                            .Include(Stylist => Stylist.Client)
                             .ToList();
       return View(model);
     }
 
     public ActionResult Create()
     {
-      ViewBag.RestaurantId = new SelectList(_db.Restaurants, "RestaurantId", "Name");
+      ViewBag.ClientId = new SelectList(_db.Clients, "ClientId", "Name");
       return View();
     }
 
     [HttpPost]
-    public ActionResult Create(Cuisine cuisine)
+    public ActionResult Create(Stylist stylist)
     {
-      if (cuisine.RestaurantId == 0)
+      if (stylist.ClientId == 0)
       {
         return RedirectToAction("Create");
       }
-      _db.Cuisines.Add(cuisine);
+      _db.Stylists.Add(stylist);
       _db.SaveChanges();
       return RedirectToAction("Index");
     }
 
     public ActionResult Details(int id)
     {
-      Cuisine thisCuisine = _db.Cuisines
-                          .Include(cuisine => cuisine.Restaurant)
-                          .FirstOrDefault(cuisine => cuisine.CuisineId == id);
-      return View(thisCuisine);
+      Stylist thisStylist = _db.Stylists
+                          .Include(stylist => stylist.Client)
+                          .FirstOrDefault(stylist => stylist.StylistId == id);
+      return View(thisStylist);
     }
 
     public ActionResult Edit(int id)
     {
-      Cuisine thisCuisine = _db.Cuisines.FirstOrDefault(cuisine => cuisine.CuisineId == id);
-      ViewBag.RestaurantId = new SelectList(_db.Restaurants, "RestaurantId", "Name");
-      return View(thisCuisine);
+      Stylist thisStylist = _db.Stylists.FirstOrDefault(stylist => stylist.StylistId == id);
+      ViewBag.ClientId = new SelectList(_db.Clients, "ClientId", "Name");
+      return View(thisStylist);
     }
 
     [HttpPost]
