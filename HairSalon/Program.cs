@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using HairSalon.Models;
 
-namespace HairSalons
+namespace HairSalon
 {
   class Program
   {
@@ -24,7 +24,6 @@ namespace HairSalons
 
       WebApplication app = builder.Build();
 
-      // app.UseDeveloperExceptionPage();
       app.UseHttpsRedirection();
       app.UseStaticFiles();
 
