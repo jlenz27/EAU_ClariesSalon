@@ -2,21 +2,21 @@
   Layout = "_Layout";
 }
 
-@model BestRestaurants.Models.Cuisine
+@model HairSalons.Models.Stylist
 
 <h2>Edit</h2>
 
-<h4>Edit this cuisine: @Html.DisplayFor(model => model.Description)</h4>
+<h4>Edit this Stylist: @Html.DisplayFor(model => model.Description)</h4>
 
 @using (Html.BeginForm())
 {
-  @Html.HiddenFor(model => model.CuisineId)
+  @Html.HiddenFor(model => model.StylistId)
 
   @Html.LabelFor(model => model.Description)
   @Html.EditorFor(model => model.Description)
 
-  @Html.LabelFor(model => model.Restaurant)
-  @Html.DropDownList("RestaurantId")
+  @Html.LabelFor(model => model.Client)
+  @Html.DropDownList("ClientId")
 
   <input type="submit" value="Save" />
 }

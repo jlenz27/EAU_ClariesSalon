@@ -1,11 +1,15 @@
 using System.Collections.Generic;
+using Microsoft.EntityFrameworkCore;
 
-namespace HairSalons.Models
+
+namespace HairSalon.Models
 {
   public class Client
   {
     public int ClientId { get; set; }
-    public string Name { get; set; }
-    public List<Stylist> stylists { get; set; }
+    public string ClientName { get; set;}
+    public int StylistId {get; set;}
+
+    public Stylist stylist {get; set;}
   }
 }

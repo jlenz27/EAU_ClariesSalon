@@ -2,13 +2,13 @@
   Layout = "_Layout";
 }
 
-@model HairSalons.Models.Clients
+@model HairSalon.Models.Client
 
-<h2>Are you sure you want to delete this?</h2>
+<h2>Are you sure you want to delete this client's entry?</h2>
 
-@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)
+@Html.DisplayNameFor(model => model.ClientName): @Html.DisplayFor(model => model.ClientName)
 @using (Html.BeginForm())
 {
-  <input type="submit" value="Delete" />
+    <input type="submit" value="Delete" />
 }
-@Html.ActionLink("Back to List", "Index")
+@Html.ActionLink("Back to list of clients", "Index")
