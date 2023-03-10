@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
-using HairSalons.Models;
+using HairSalon.Models;
 
 namespace HairSalons
 {
@@ -14,7 +14,7 @@ namespace HairSalons
 
       builder.Services.AddControllersWithViews();
 
-      builder.Services.AddDbContext<HairSalonsContext>(
+      builder.Services.AddDbContext<HairSalonContext>(
                         dbContextOptions => dbContextOptions
                           .UseMySql(
                             builder.Configuration["ConnectionStrings:DefaultConnection"], ServerVersion.AutoDetect(builder.Configuration["ConnectionStrings:DefaultConnection"]

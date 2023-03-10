@@ -1,4 +1,6 @@
-namespace HairSalons.Models
+using System.Collections.Generic;
+
+namespace HairSalon.Models
 {
   public class Stylist
   {
