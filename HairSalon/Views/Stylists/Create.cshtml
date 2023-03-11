@@ -9,10 +9,10 @@
 {
   @Html.LabelFor(model => model.StylistName)
   @Html.TextBoxFor(model => model.StylistName)
-  
+  <br><br>
   @Html.LabelFor(model => model.StylistDetails)
   @Html.TextBoxFor(model => model.StylistDetails)
-  
+  <br><br>
   <input type="submit" value="Add New stylist" />
 }
 <p>@Html.ActionLink("Show All Stylists", "Index")</p>
