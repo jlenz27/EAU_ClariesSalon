@@ -4,10 +4,10 @@
 
 @model HairSalon.Models.Client
 
-<h1>Restaurant Details</h1>
+<h1>Client Details</h1>
 <hr/>
 <h3>@Html.DisplayNameFor(model => model.ClientName): @Html.DisplayFor(model => model.ClientName)</h3>
 <h3>@Html.DisplayNameFor(model => model.Stylist): @Html.DisplayFor(model => model.Stylist.StylistDetails)</h3>
 
-<p>@Html.ActionLink("Edit restaurant", "Edit", new { id = Model.ClientId })</p>
-<p>@Html.ActionLink("Delete restaurant", "Delete", new { id = Model.ClientId })</p>
+<p>@Html.ActionLink("Edit Client", "Edit", new { id = Model.ClientId })</p>
+<p>@Html.ActionLink("Delete Client", "Delete", new { id = Model.ClientId })</p>

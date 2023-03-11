@@ -6,7 +6,8 @@ using HairSalon.Models;
 
 namespace HairSalon.Controllers
 {
-  public class StylistsController : Controller{
+  public class StylistsController : Controller
+  {
     private readonly HairSalonContext _db;
 
     public StylistsController(HairSalonContext db)
